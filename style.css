@@ -1,0 +1,699 @@
+/*
+============================================================
+ESTILOS DEL TEMA HIJO
+============================================================
+*/
+
+/* ----------------------------------------------------------
+   1. VARIABLES Y RESET
+   ---------------------------------------------------------- */
+
+:root {
+  --background: 45 14% 96%;
+  --foreground: 30 5% 9%;
+  --card: 45 14% 98%;
+  --primary: 30 5% 9%;
+  --primary-foreground: 45 14% 96%;
+  --secondary: 44 10% 90%;
+  --muted: 44 10% 91%;
+  --muted-foreground: 30 4% 38%;
+  --signal: 4 72% 47%;
+  --signal-foreground: 45 16% 97%;
+  --border: 40 8% 82%;
+  --radius: 0.25rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: clip;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  font-family: "Fira Sans", ui-sans-serif, system-ui, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: hsl(var(--signal));
+  color: hsl(var(--signal-foreground));
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+/* ----------------------------------------------------------
+   2. MARCO DECORATIVO
+   ---------------------------------------------------------- */
+
+.frame {
+  position: fixed;
+  z-index: 40;
+  inset: 0.5rem;
+  pointer-events: none;
+  border: 1px solid hsl(var(--foreground) / 0.2);
+}
+
+@media (min-width: 640px) {
+  .frame {
+    inset: 0.75rem;
+  }
+}
+
+/* ----------------------------------------------------------
+   3. HERO
+   ---------------------------------------------------------- */
+
+.hero-jlta,
+.hero-jlta p,
+.hero-jlta h1,
+.hero-jlta h2,
+.hero-jlta h3,
+.hero-jlta a,
+.hero-jlta .wp-block-button__link,
+.hero-jlta .wp-block-heading {
+  font-family: "Fira Sans", ui-sans-serif, system-ui, sans-serif;
+}
+
+html body .wp-block-group.hero-jlta {
+  padding-right: max(1.5rem, calc((100% - 72rem) / 2)) !important;
+  padding-left: max(1.5rem, calc((100% - 72rem) / 2)) !important;
+}
+
+/* Imagen del hero */
+
+html body .wp-block-group.jlta-hero-image {
+  padding-right: max(1.5rem, calc((100% - 64rem) / 2)) !important;
+  padding-left: max(1.5rem, calc((100% - 64rem) / 2)) !important;
+}
+
+.jlta-hero-image .wp-block-image.jlta-hero-image-frame {
+  margin: 0 auto;
+  padding: 2.5rem;
+  border: 1px solid #d1cdc4;
+  background-color: #e8e5df;
+}
+
+.jlta-hero-image .wp-block-image.jlta-hero-image-frame img {
+  width: 100%;
+  height: auto;
+  margin: 0 auto;
+  border: none;
+}
+
+/* Etiquetas superiores del hero y de productos */
+
+.hero-jlta .jlta-eyebrow,
+.wp-block-group.hero-jlta p.jlta-eyebrow,
+html body .jlta-products-section .jlta-products-eyebrow {
+  margin: 0 0 1rem !important;
+  color: hsl(var(--signal)) !important;
+  font-size: 0.875rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  letter-spacing: 0.32em !important;
+  text-transform: uppercase !important;
+}
+
+/* Título del hero */
+
+.hero-jlta .jlta-hero-title,
+.wp-block-group.hero-jlta h1.jlta-hero-title {
+  max-width: 56rem;
+  margin: 1rem 0 0;
+  color: hsl(var(--foreground));
+  font-size: clamp(2.6rem, 7.5vw, 6rem);
+  font-weight: 600;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+html body .wp-block-group.hero-jlta h1.jlta-hero-title em {
+  display: block !important;
+  color: hsl(var(--signal));
+  font-family: "Newsreader", Georgia, serif;
+  font-weight: 500;
+  font-style: italic;
+}
+
+/* Subtítulo */
+
+.hero-jlta .jlta-hero-subtitle,
+.wp-block-group.hero-jlta p.jlta-hero-subtitle {
+  max-width: 36rem;
+  margin: 1.5rem 0 0;
+  color: hsl(var(--muted-foreground));
+  font-size: 1.125rem;
+  font-weight: 400;
+  line-height: 1.625;
+}
+
+/* Botones del hero */
+
+.hero-jlta .jlta-hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.hero-jlta .wp-block-button.jlta-btn-primary .wp-block-button__link {
+  display: inline-flex;
+  align-items: center;
+  height: 3rem;
+  padding: 0 1.75rem;
+  border-radius: 2px;
+  background-color: #c0392b;
+  color: #fdfaf5;
+  font-weight: 500;
+  line-height: 3rem;
+}
+
+.hero-jlta .wp-block-button.jlta-btn-primary .wp-block-button__link:hover {
+  background-color: #a83224;
+}
+
+.hero-jlta .wp-block-button.jlta-btn-outline .wp-block-button__link {
+  display: inline-flex;
+  align-items: center;
+  height: 3rem;
+  padding: 0 1.75rem;
+  border: 1px solid rgba(23, 22, 20, 0.3);
+  border-radius: 2px;
+  background-color: transparent;
+  color: #171614;
+  font-weight: 500;
+  line-height: 3rem;
+}
+
+.hero-jlta .wp-block-button.jlta-btn-outline .wp-block-button__link:hover {
+  border-color: #171614;
+  background-color: #e8e5df;
+}
+
+/* Ocultar el título automático de la página Inicio */
+
+html body.page .wp-block-post-title:not(.jlta-product-card__title) {
+  display: none !important;
+}
+
+/* ----------------------------------------------------------
+   4. CONTADORES
+   ---------------------------------------------------------- */
+
+html body .wp-block-group.jlta-counters {
+  padding: 0 !important;
+  border-top: 1px solid hsl(var(--border));
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+html body .jlta-counters .wp-block-columns.jlta-counters__grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  max-width: 72rem;
+  gap: 0 !important;
+  margin: 0 auto !important;
+}
+
+html body .jlta-counters .wp-block-column.jlta-counter {
+  display: block !important;
+  margin: 0 !important;
+  padding: 2.5rem 1.5rem !important;
+  border-right: 1px solid hsl(var(--border));
+}
+
+html body .jlta-counters .wp-block-column.jlta-counter:nth-child(4) {
+  border-right: none !important;
+}
+
+html body .jlta-counters p.jlta-counter__number {
+  margin: 0 0 0.5rem !important;
+  color: hsl(var(--foreground));
+  font-size: 2.25rem !important;
+  font-weight: 600 !important;
+}
+
+html body .jlta-counters p.jlta-counter__label {
+  margin: 0 !important;
+  color: hsl(var(--muted-foreground));
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+}
+
+@media (max-width: 781px) {
+  html body .jlta-counters .wp-block-columns.jlta-counters__grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  html body .jlta-counters .wp-block-column.jlta-counter {
+    border-bottom: 1px solid hsl(var(--border)) !important;
+  }
+
+  html body .jlta-counters .wp-block-column.jlta-counter:nth-child(2n) {
+    border-right: none !important;
+  }
+
+  html body .jlta-counters .wp-block-column.jlta-counter:nth-child(n + 3) {
+    border-bottom: none !important;
+  }
+}
+
+/* ----------------------------------------------------------
+   5. SECCIÓN DE PRODUCTOS
+   ---------------------------------------------------------- */
+
+html body .jlta-products-section {
+  width: 100%;
+  padding: 5rem 1.5rem;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+@media (min-width: 768px) {
+  html body .jlta-products-section {
+    padding: 7rem 2.5rem;
+  }
+}
+
+/* Encabezado de productos */
+
+html body .jlta-products-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto 2.5rem;
+}
+
+html body .jlta-products-title {
+  margin: 0;
+  color: hsl(var(--foreground));
+  font-size: 1.875rem;
+  font-weight: 600;
+}
+
+html body .jlta-products-link {
+  color: hsl(var(--foreground));
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Contenedor de la colección */
+
+html body .jlta-products-section
+.wp-block-woocommerce-product-collection {
+  width: 100% !important;
+  max-width: 72rem !important;
+  margin: 0 auto !important;
+}
+
+/* Cuadrícula */
+
+html body .jlta-products-section .wc-block-product-template,
+html body .jlta-products-section .wp-block-post-template {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  align-items: stretch !important;
+  justify-content: stretch !important;
+  width: 100% !important;
+  gap: 1.5rem !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+}
+
+/* Tarjetas */
+
+html body .jlta-products-section .wc-block-product-template > li,
+html body .jlta-products-section .wp-block-post-template > li {
+  display: flex !important;
+  flex-direction: column !important;
+  width: 100% !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+  border: 1px solid hsl(var(--border)) !important;
+  background: hsl(var(--card)) !important;
+}
+
+/* Imagen */
+
+html body .jlta-products-section
+.wc-block-components-product-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  height: 192px !important;
+  margin: 0 !important;
+  padding: 1.25rem !important;
+  border-bottom: 1px solid hsl(var(--border)) !important;
+  background: #f0f0ed !important;
+  aspect-ratio: auto !important;
+}
+
+html body .jlta-products-section
+.wc-block-components-product-image a {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+html body .jlta-products-section
+.wc-block-components-product-image img {
+  display: block !important;
+  width: 100% !important;
+  height: 160px !important;
+  object-fit: contain !important;
+}
+
+/* Título del producto */
+
+html body .jlta-products-section
+.wc-block-components-product-title,
+html body .jlta-products-section
+.wp-block-post-title,
+html body .jlta-products-section
+.jlta-product-card__title {
+  position: relative !important;
+  display: block !important;
+  width: auto !important;
+  min-height: auto !important;
+  margin: 1rem 1rem 0.25rem !important;
+  padding: 0 1.5rem 0 0 !important;
+  color: hsl(var(--foreground)) !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+html body .jlta-products-section
+.wc-block-components-product-title a,
+html body .jlta-products-section
+.wp-block-post-title a,
+html body .jlta-products-section
+.jlta-product-card__title a {
+  display: block !important;
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* Flecha del título */
+
+html body .jlta-products-section
+.wc-block-components-product-title::after,
+html body .jlta-products-section
+.wp-block-post-title::after,
+html body .jlta-products-section
+.jlta-product-card__title::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: hsl(var(--muted-foreground));
+  content: "↗";
+  font-size: 1rem;
+}
+
+/* Descripción */
+
+html body .jlta-products-section
+.wc-block-components-product-description,
+html body .jlta-products-section
+.wp-block-post-excerpt {
+  width: auto !important;
+  margin: 0 1rem 0.75rem !important;
+  color: hsl(var(--muted-foreground)) !important;
+  font-size: 0.78rem !important;
+  line-height: 1.3 !important;
+}
+
+/* Precio */
+
+html body .jlta-products-section
+.wc-block-components-product-price,
+html body .jlta-products-section .price {
+  width: auto !important;
+  margin: auto 1rem 0.75rem !important;
+  color: hsl(var(--signal)) !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
+}
+
+/* Botón */
+
+html body .jlta-products-section
+.wc-block-components-product-button {
+  width: auto !important;
+  margin: 0 1rem 1rem !important;
+  text-align: right !important;
+}
+
+html body .jlta-products-section
+.wc-block-components-product-button__button,
+html body .jlta-products-section
+.wp-block-button__link {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-width: 92px !important;
+  padding: 0.55rem 0.8rem !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: #171614 !important;
+  color: #ffffff !important;
+  font-size: 0.78rem !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+}
+
+/* ----------------------------------------------------------
+   6. RESPONSIVE
+   ---------------------------------------------------------- */
+
+@media (min-width: 768px) {
+  html body .jlta-products-title {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  html body .jlta-products-section .wc-block-product-template,
+  html body .jlta-products-section .wp-block-post-template {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 639px) {
+  html body .jlta-products-section {
+    padding: 4rem 1rem;
+  }
+
+  html body .jlta-products-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  html body .jlta-products-section .wc-block-product-template,
+  html body .jlta-products-section .wp-block-post-template {
+    grid-template-columns: 1fr !important;
+  }
+
+  html body .jlta-products-section
+  .wc-block-components-product-image {
+    height: 220px !important;
+  }
+}
+
+
+/* ----------------------------------------------------------
+   INICIO tema_hijo_style.css_026
+   Entrega: 026
+   Cambios acumulados: 001-025 consolidados, 
+                       026 (alineación del encabezado de productos)
+   ---------------------------------------------------------- */
+
+/* Forzar que el encabezado de la sección de productos tenga el mismo ancho y centrado que las tarjetas */
+html body .jlta-products-header {
+  max-width: 72rem !important;
+  margin: 0 auto 2.5rem auto !important;
+  padding: 0 !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Asegurar que la sección en sí misma no tenga paddings laterales extraños */
+html body .jlta-products-section {
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-products-section {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
+}
+
+/* ----------------------------------------------------------
+   FIN tema_hijo_style.css_026
+   ---------------------------------------------------------- */
+   
+   
+/* ----------------------------------------------------------
+   INICIO tema_hijo_style.css_027
+   Entrega: 027
+   Cambios acumulados: 001-026 (consolidado), 
+                       027 (estilos del taller/manifiesto)
+   ---------------------------------------------------------- */
+
+/* 1. SECCIÓN PRINCIPAL (Borde superior y espaciado) */
+html body .wp-block-group.jlta-taller-section {
+  border-top: 1px solid hsl(var(--border));
+  padding: 5rem 1.5rem;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  html body .wp-block-group.jlta-taller-section {
+    padding: 7rem 2.5rem;
+  }
+}
+
+/* 2. GRID DE COLUMNAS (2 columnas) */
+html body .jlta-taller-section .wp-block-columns.jlta-taller-grid {
+  max-width: 72rem;
+  margin: 0 auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 3rem !important;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-taller-section .wp-block-columns.jlta-taller-grid {
+    flex-direction: row !important;
+    gap: 4rem !important;
+  }
+}
+
+html body .jlta-taller-section .wp-block-column.jlta-taller-col-izq,
+html body .jlta-taller-section .wp-block-column.jlta-taller-col-der {
+  flex: 1 1 100% !important;
+  min-width: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-taller-section .wp-block-column.jlta-taller-col-izq,
+  html body .jlta-taller-section .wp-block-column.jlta-taller-col-der {
+    flex: 1 1 50% !important;
+  }
+}
+
+/* 3. LA CITA (Izquierda) */
+html body .jlta-taller-section p.jlta-taller-cita {
+  font-family: 'Newsreader', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 1.875rem !important;
+  line-height: 1.3 !important;
+  color: hsl(var(--foreground)) !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 0 !important;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-taller-section p.jlta-taller-cita {
+    font-size: 2.6rem !important;
+    line-height: 1.2 !important;
+  }
+}
+
+/* 4. LA FIRMA */
+html body .jlta-taller-section p.jlta-taller-firma {
+  font-size: 0.75rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.3em !important;
+  text-transform: uppercase !important;
+  color: hsl(var(--signal)) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 5. EL TEXTO (Derecha) */
+html body .jlta-taller-section p.jlta-taller-texto {
+  font-size: 1rem !important;
+  line-height: 1.7 !important;
+  color: hsl(var(--muted-foreground)) !important;
+  margin: 0 0 1.5rem 0 !important;
+  padding: 0 !important;
+}
+
+/* Quitar el margen del último párrafo para que quede alineado con la cita */
+html body .jlta-taller-section p.jlta-taller-texto:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* 6. ETIQUETA VERTICAL (Opcional - para simular el diseño original) */
+html body .wp-block-group.jlta-taller-section::before {
+  content: "02 · El taller";
+  position: absolute;
+  left: 1.75rem;
+  top: 6rem;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  html body .wp-block-group.jlta-taller-section::before {
+    display: block;
+  }
+}
+
+/* ----------------------------------------------------------
+   FIN tema_hijo_style.css_027
+   ---------------------------------------------------------- */   
+   
+/* ----------------------------------------------------------
+   INICIO tema_hijo_style.css_028
+   Entrega: 028
+   Cambios acumulados: 001-027 consolidados, 
+                       028 (quitar etiqueta vertical del taller)
+   ---------------------------------------------------------- */
+
+/* Ocultar la etiqueta vertical "02 · El taller" */
+html body .wp-block-group.jlta-taller-section::before {
+  display: none !important;
+  content: none !important;
+}
+
+/* ----------------------------------------------------------
+   FIN tema_hijo_style.css_028
+   ---------------------------------------------------------- */
