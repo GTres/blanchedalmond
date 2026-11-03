@@ -226,3 +226,181 @@ html body .jlta-cta-desc { font-size: 0.875rem; color: hsl(var(--primary-foregro
 
 html body .jlta-cta-btn .wp-block-button__link { display: inline-flex; align-items: center; gap: 0.5rem; background-color: hsl(var(--signal)); color: hsl(var(--primary-foreground)); border-radius: 2px; padding: 1rem 2rem; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: background-color .15s ease; }
 html body .jlta-cta-btn .wp-block-button__link:hover { background-color: hsl(var(--signal) / 0.9); }
+
+
+/* ----------------------------------------------------------
+   INICIO tema_hijo_style.css_038
+   Entrega: 038
+   Cambios acumulados: 001-037 consolidados,
+                       038 (estilos del footer)
+   ---------------------------------------------------------- */
+
+/* 1. CONTENEDOR PRINCIPAL */
+html body .jlta-footer-section {
+  background-color: hsl(var(--background));
+  border-top: 1px solid hsl(var(--border));
+  padding: 4rem 1.5rem 2rem;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-footer-section {
+    padding: 5rem 2.5rem 2rem;
+  }
+}
+
+/* 2. GRID DE COLUMNAS */
+html body .jlta-footer-section .wp-block-columns.jlta-footer-grid {
+  max-width: 72rem;
+  margin: 0 auto 4rem auto !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2.5rem !important;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-footer-section .wp-block-columns.jlta-footer-grid {
+    flex-direction: row !important;
+    gap: 4rem !important;
+  }
+}
+
+/* 3. COLUMNA MARCA */
+html body .jlta-footer-col-brand {
+  flex: 1 1 100% !important;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-footer-col-brand {
+    flex: 1 1 40% !important;
+  }
+}
+
+html body .jlta-footer-brand {
+  display: flex;
+  align-items: baseline;
+  gap: 0.375rem;
+  margin-bottom: 1rem;
+}
+
+html body .jlta-footer-brand-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: hsl(var(--foreground));
+}
+
+html body .jlta-footer-brand-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: hsl(var(--signal));
+}
+
+html body .jlta-footer-desc {
+  color: hsl(var(--muted-foreground));
+  font-size: 0.875rem;
+  line-height: 1.6;
+  max-width: 20rem;
+}
+
+/* 4. COLUMNAS DE ENLACES Y CONTACTO */
+html body .jlta-footer-col-links,
+html body .jlta-footer-col-contact {
+  flex: 1 1 100% !important;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-footer-col-links,
+  html body .jlta-footer-col-contact {
+    flex: 1 1 30% !important;
+  }
+}
+
+html body .jlta-footer-col-title {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+  margin: 0 0 1.25rem 0;
+}
+
+/* 5. LISTA DE ENLACES */
+html body .jlta-footer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+html body .jlta-footer-list li {
+  margin-bottom: 0.75rem;
+}
+
+html body .jlta-footer-list a {
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: color .15s ease;
+}
+
+html body .jlta-footer-list a:hover {
+  color: hsl(var(--signal));
+}
+
+/* 6. LISTA DE CONTACTO */
+html body .jlta-footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+html body .jlta-footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+  color: hsl(var(--foreground));
+  font-size: 0.875rem;
+}
+
+html body .jlta-footer-contact li svg.jlta-footer-icon {
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+  color: hsl(var(--muted-foreground));
+}
+
+html body .jlta-footer-hours {
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+  margin: 0;
+}
+
+/* 7. BARRA DE COPYRIGHT (Inferior) */
+html body .jlta-footer-bottom {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-top: 1.5rem;
+  border-top: 1px solid hsl(var(--border));
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+}
+
+@media (min-width: 640px) {
+  html body .jlta-footer-bottom {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+html body .jlta-footer-bottom p {
+  margin: 0;
+}
+
+/* ----------------------------------------------------------
+   FIN tema_hijo_style.css_038
+   ---------------------------------------------------------- */
