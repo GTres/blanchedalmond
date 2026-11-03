@@ -1,21 +1,8 @@
-/*
-============================================================
-ESTILOS DEL TEMA HIJO - JLTAEXPRESS
-============================================================
-Estructura:
-  1. Variables y reset
-  2. Marco decorativo
-  3. Hero
-  4. Contadores
-  5. Productos
-  6. Manifiesto
-  7. Responsive
-============================================================
-*/
+/* ============================================================
+   TEMA HIJO - JLTAEXPRESS (VERSIÓN FINAL DEFINITIVA)
+   ============================================================ */
 
-/* ----------------------------------------------------------
-   1. VARIABLES Y RESET
-   ---------------------------------------------------------- */
+/* 1. VARIABLES Y RESET */
 :root {
   --background: 45 14% 96%;
   --foreground: 30 5% 9%;
@@ -31,13 +18,8 @@ Estructura:
   --radius: 0.25rem;
 }
 
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
 
 body {
   overflow-x: clip;
@@ -46,7 +28,6 @@ body {
   font-family: "Fira Sans", ui-sans-serif, system-ui, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
 }
 
 ::selection {
@@ -54,779 +35,194 @@ body {
   color: hsl(var(--signal-foreground));
 }
 
-h1, h2, h3, h4 {
-  font-weight: 600;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+h1, h2, h3, h4 { font-weight: 600; line-height: 1.1; letter-spacing: -0.02em; }
+
+/* Clases utilitarias para SVG y enlaces */
+html body .jlta-svg-icon { width: 1.25rem !important; height: 1.25rem !important; stroke-width: 2px !important; display: block; }
+html body .jlta-svg-icon-sm { width: 1rem !important; height: 1rem !important; stroke-width: 2px !important; display: block; }
+
+/* Marco decorativo */
+.frame { position: fixed; z-index: 40; inset: 0.5rem; pointer-events: none; border: 1px solid hsl(var(--foreground) / 0.2); }
+@media (min-width: 640px) { .frame { inset: 0.75rem; } }
+
+/* 2. HERO */
+html body .wp-block-group.hero-jlta { padding-right: max(1.5rem, calc((100% - 72rem) / 2)) !important; padding-left: max(1.5rem, calc((100% - 72rem) / 2)) !important; }
+html body .wp-block-group.jlta-hero-image { padding-right: max(1.5rem, calc((100% - 64rem) / 2)) !important; padding-left: max(1.5rem, calc((100% - 64rem) / 2)) !important; }
+
+.jlta-hero-image .wp-block-image.jlta-hero-image-frame { margin: 0 auto; padding: 2.5rem; border: 1px solid #d1cdc4; background-color: #e8e5df; }
+.jlta-hero-image .wp-block-image.jlta-hero-image-frame img { width: 100%; height: auto; margin: 0 auto; border: none; }
+
+.hero-jlta .jlta-eyebrow, .wp-block-group.hero-jlta p.jlta-eyebrow, html body .jlta-products-section .jlta-products-eyebrow {
+  margin: 0 0 1rem !important; color: hsl(var(--signal)) !important; font-size: 0.875rem !important; font-weight: 600 !important; letter-spacing: 0.32em !important; text-transform: uppercase !important;
 }
 
-/* ----------------------------------------------------------
-   2. MARCO DECORATIVO
-   ---------------------------------------------------------- */
-.frame {
-  position: fixed;
-  z-index: 40;
-  inset: 0.5rem;
-  pointer-events: none;
-  border: 1px solid hsl(var(--foreground) / 0.2);
-}
-
-@media (min-width: 640px) {
-  .frame {
-    inset: 0.75rem;
-  }
-}
-
-/* ----------------------------------------------------------
-   3. HERO
-   ---------------------------------------------------------- */
-.hero-jlta,
-.hero-jlta p,
-.hero-jlta h1,
-.hero-jlta h2,
-.hero-jlta h3,
-.hero-jlta a,
-.hero-jlta .wp-block-button__link,
-.hero-jlta .wp-block-heading {
-  font-family: "Fira Sans", ui-sans-serif, system-ui, sans-serif;
-}
-
-html body .wp-block-group.hero-jlta {
-  padding-right: max(1.5rem, calc((100% - 72rem) / 2)) !important;
-  padding-left: max(1.5rem, calc((100% - 72rem) / 2)) !important;
-}
-
-html body .wp-block-group.jlta-hero-image {
-  padding-right: max(1.5rem, calc((100% - 64rem) / 2)) !important;
-  padding-left: max(1.5rem, calc((100% - 64rem) / 2)) !important;
-}
-
-.jlta-hero-image .wp-block-image.jlta-hero-image-frame {
-  margin: 0 auto;
-  padding: 2.5rem;
-  border: 1px solid #d1cdc4;
-  background-color: #e8e5df;
-}
-
-.jlta-hero-image .wp-block-image.jlta-hero-image-frame img {
-  width: 100%;
-  height: auto;
-  margin: 0 auto;
-  border: none;
-}
-
-/* Etiquetas superiores (eyebrow) */
-.hero-jlta .jlta-eyebrow,
-.wp-block-group.hero-jlta p.jlta-eyebrow,
-html body .jlta-products-section .jlta-products-eyebrow {
-  margin: 0 0 1rem !important;
-  color: hsl(var(--signal)) !important;
-  font-size: 0.875rem !important;
-  font-weight: 600 !important;
-  line-height: 1.2 !important;
-  letter-spacing: 0.32em !important;
-  text-transform: uppercase !important;
-}
-
-/* Título del hero */
-.hero-jlta .jlta-hero-title,
-.wp-block-group.hero-jlta h1.jlta-hero-title {
-  max-width: 56rem;
-  margin: 1rem 0 0;
-  color: hsl(var(--foreground));
-  font-size: clamp(2.6rem, 7.5vw, 6rem);
-  font-weight: 600;
-  line-height: 0.98;
-  letter-spacing: -0.03em;
+.hero-jlta .jlta-hero-title, .wp-block-group.hero-jlta h1.jlta-hero-title {
+  max-width: 56rem; margin: 1rem 0 0; color: hsl(var(--foreground)); font-size: clamp(2.6rem, 7.5vw, 6rem); font-weight: 600; line-height: 0.98; letter-spacing: -0.03em;
 }
 
 html body .wp-block-group.hero-jlta h1.jlta-hero-title em {
-  display: block !important;
-  color: hsl(var(--signal));
-  font-family: "Newsreader", Georgia, serif;
-  font-weight: 500;
-  font-style: italic;
+  display: block !important; color: hsl(var(--signal)); font-family: "Newsreader", Georgia, serif; font-weight: 500; font-style: italic;
 }
 
-/* Subtítulo */
-.hero-jlta .jlta-hero-subtitle,
-.wp-block-group.hero-jlta p.jlta-hero-subtitle {
-  max-width: 36rem;
-  margin: 1.5rem 0 0;
-  color: hsl(var(--muted-foreground));
-  font-size: 1.125rem;
-  font-weight: 400;
-  line-height: 1.625;
+.hero-jlta .jlta-hero-subtitle, .wp-block-group.hero-jlta p.jlta-hero-subtitle {
+  max-width: 36rem; margin: 1.5rem 0 0; color: hsl(var(--muted-foreground)); font-size: 1.125rem; font-weight: 400; line-height: 1.625;
 }
 
-/* Botones del hero */
-.hero-jlta .jlta-hero-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
-}
+.hero-jlta .jlta-hero-buttons { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 2rem; }
 
 .hero-jlta .wp-block-button.jlta-btn-primary .wp-block-button__link {
-  display: inline-flex;
-  align-items: center;
-  height: 3rem;
-  padding: 0 1.75rem;
-  border-radius: 2px;
-  background-color: #c0392b;
-  color: #fdfaf5;
-  font-weight: 500;
-  line-height: 3rem;
+  display: inline-flex; align-items: center; gap: 0.5rem; height: 3rem; padding: 0 1.75rem; border-radius: 2px; background-color: #c0392b; color: #fdfaf5; font-weight: 500; line-height: 3rem; transition: background .15s;
 }
-
-.hero-jlta .wp-block-button.jlta-btn-primary .wp-block-button__link:hover {
-  background-color: #a83224;
-}
+.hero-jlta .wp-block-button.jlta-btn-primary .wp-block-button__link:hover { background-color: #a83224; }
 
 .hero-jlta .wp-block-button.jlta-btn-outline .wp-block-button__link {
-  display: inline-flex;
-  align-items: center;
-  height: 3rem;
-  padding: 0 1.75rem;
-  border: 1px solid rgba(23, 22, 20, 0.3);
-  border-radius: 2px;
-  background-color: transparent;
-  color: #171614;
-  font-weight: 500;
-  line-height: 3rem;
+  display: inline-flex; align-items: center; height: 3rem; padding: 0 1.75rem; border: 1px solid rgba(23, 22, 20, 0.3); border-radius: 2px; background-color: transparent; color: #171614; font-weight: 500; line-height: 3rem; transition: all .15s;
 }
+.hero-jlta .wp-block-button.jlta-btn-outline .wp-block-button__link:hover { border-color: #171614; background-color: #e8e5df; }
 
-.hero-jlta .wp-block-button.jlta-btn-outline .wp-block-button__link:hover {
-  border-color: #171614;
-  background-color: #e8e5df;
-}
+html body.page .wp-block-post-title:not(.jlta-product-card__title) { display: none !important; }
 
-/* Ocultar el título automático de la página Inicio */
-html body.page .wp-block-post-title:not(.jlta-product-card__title) {
-  display: none !important;
-}
-
-/* ----------------------------------------------------------
-   4. CONTADORES
-   ---------------------------------------------------------- */
-html body .wp-block-group.jlta-counters {
-  padding: 0 !important;
-  border-top: 1px solid hsl(var(--border));
-  border-bottom: 1px solid hsl(var(--border));
-}
-
-html body .jlta-counters .wp-block-columns.jlta-counters__grid {
-  display: grid !important;
-  grid-template-columns: repeat(4, 1fr) !important;
-  max-width: 72rem;
-  gap: 0 !important;
-  margin: 0 auto !important;
-}
-
-html body .jlta-counters .wp-block-column.jlta-counter {
-  display: block !important;
-  margin: 0 !important;
-  padding: 2.5rem 1.5rem !important;
-  border-right: 1px solid hsl(var(--border));
-}
-
-html body .jlta-counters .wp-block-column.jlta-counter:nth-child(4) {
-  border-right: none !important;
-}
-
-html body .jlta-counters p.jlta-counter__number {
-  margin: 0 0 0.5rem !important;
-  color: hsl(var(--foreground));
-  font-size: 2.25rem !important;
-  font-weight: 600 !important;
-}
-
-html body .jlta-counters p.jlta-counter__label {
-  margin: 0 !important;
-  color: hsl(var(--muted-foreground));
-  font-size: 0.75rem !important;
-  font-weight: 500 !important;
-  letter-spacing: 0.2em !important;
-  text-transform: uppercase !important;
-}
+/* 3. CONTADORES */
+html body .wp-block-group.jlta-counters { padding: 0 !important; border-top: 1px solid hsl(var(--border)); border-bottom: 1px solid hsl(var(--border)); }
+html body .jlta-counters .wp-block-columns.jlta-counters__grid { display: grid !important; grid-template-columns: repeat(4, 1fr) !important; max-width: 72rem; gap: 0 !important; margin: 0 auto !important; }
+html body .jlta-counters .wp-block-column.jlta-counter { display: block !important; margin: 0 !important; padding: 2.5rem 1.5rem !important; border-right: 1px solid hsl(var(--border)); }
+html body .jlta-counters .wp-block-column.jlta-counter:nth-child(4) { border-right: none !important; }
+html body .jlta-counters p.jlta-counter__number { margin: 0 0 0.5rem !important; color: hsl(var(--foreground)); font-size: 2.25rem !important; font-weight: 600 !important; }
+html body .jlta-counters p.jlta-counter__label { margin: 0 !important; color: hsl(var(--muted-foreground)); font-size: 0.75rem !important; font-weight: 500 !important; letter-spacing: 0.2em !important; text-transform: uppercase !important; }
 
 @media (max-width: 781px) {
-  html body .jlta-counters .wp-block-columns.jlta-counters__grid {
-    grid-template-columns: repeat(2, 1fr) !important;
-  }
-
-  html body .jlta-counters .wp-block-column.jlta-counter {
-    border-bottom: 1px solid hsl(var(--border)) !important;
-  }
-
-  html body .jlta-counters .wp-block-column.jlta-counter:nth-child(2n) {
-    border-right: none !important;
-  }
-
-  html body .jlta-counters .wp-block-column.jlta-counter:nth-child(n + 3) {
-    border-bottom: none !important;
-  }
+  html body .jlta-counters .wp-block-columns.jlta-counters__grid { grid-template-columns: repeat(2, 1fr) !important; }
+  html body .jlta-counters .wp-block-column.jlta-counter { border-bottom: 1px solid hsl(var(--border)) !important; }
+  html body .jlta-counters .wp-block-column.jlta-counter:nth-child(2n) { border-right: none !important; }
+  html body .jlta-counters .wp-block-column.jlta-counter:nth-child(n + 3) { border-bottom: none !important; }
 }
 
-/* ----------------------------------------------------------
-   5. PRODUCTOS
-   ---------------------------------------------------------- */
-html body .jlta-products-section {
-  width: 100%;
-  padding: 5rem 1.5rem;
-  border-bottom: 1px solid hsl(var(--border));
+/* 4. PRODUCTOS */
+html body .jlta-products-section { width: 100%; padding: 5rem 1.5rem; border-bottom: none !important; }
+@media (min-width: 768px) { html body .jlta-products-section { padding: 7rem 2.5rem; } }
+
+html body .jlta-products-header { display: flex; align-items: flex-end; justify-content: space-between; width: 100%; max-width: 72rem; margin: 0 auto 2.5rem; padding: 0; }
+html body .jlta-products-title { margin: 0; color: hsl(var(--foreground)); font-size: 1.875rem; font-weight: 600; }
+@media (min-width: 768px) { html body .jlta-products-title { font-size: 3rem; } }
+
+/* Enlace "Ver toda la tienda" */
+html body .jlta-products-link { display: inline-flex; align-items: center; gap: 0.4rem; color: hsl(var(--foreground)); font-size: 0.875rem; font-weight: 500; text-decoration: none; transition: color .2s; }
+html body .jlta-products-link:hover { color: hsl(var(--signal)); }
+
+html body .jlta-products-section .wp-block-woocommerce-product-collection { width: 100% !important; max-width: 72rem !important; margin: 0 auto !important; }
+
+/* Grid de productos */
+html body .jlta-products-section .wc-block-product-template, html body .jlta-products-section .wp-block-post-template {
+  display: grid !important; grid-template-columns: repeat(3, minmax(0, 1fr)) !important; align-items: stretch !important; justify-content: stretch !important; width: 100% !important; gap: 1.5rem !important; margin: 0 !important; padding: 0 !important; list-style: none !important;
 }
 
-@media (min-width: 768px) {
-  html body .jlta-products-section {
-    padding: 7rem 2.5rem;
-  }
-}
-
-/* Encabezado de productos */
-html body .jlta-products-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 72rem;
-  margin: 0 auto 2.5rem;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html body .jlta-products-title {
-  margin: 0;
-  color: hsl(var(--foreground));
-  font-size: 1.875rem;
-  font-weight: 600;
-}
-
-html body .jlta-products-link {
-  color: hsl(var(--foreground));
-  font-size: 0.875rem;
-  font-weight: 500;
-  text-decoration: none;
-}
-
-/* Contenedor de la colección */
-html body .jlta-products-section .wp-block-woocommerce-product-collection {
-  width: 100% !important;
-  max-width: 72rem !important;
-  margin: 0 auto !important;
-}
-
-/* Cuadrícula */
-html body .jlta-products-section .wc-block-product-template,
-html body .jlta-products-section .wp-block-post-template {
-  display: grid !important;
-  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
-  align-items: stretch !important;
-  justify-content: stretch !important;
-  width: 100% !important;
-  gap: 1.5rem !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  list-style: none !important;
-}
-
-/* Tarjetas */
-html body .jlta-products-section .wc-block-product-template > li,
-html body .jlta-products-section .wp-block-post-template > li {
-  display: flex !important;
-  flex-direction: column !important;
-  width: 100% !important;
-  min-width: 0 !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  overflow: hidden !important;
-  border: 1px solid hsl(var(--border)) !important;
-  background: hsl(var(--card)) !important;
+/* Tarjeta */
+html body .jlta-products-section .wc-block-product-template > li, html body .jlta-products-section .wp-block-post-template > li {
+  display: flex !important; flex-direction: column !important; width: 100% !important; min-width: 0 !important; max-width: none !important; margin: 0 !important; padding: 0 !important; overflow: hidden !important; border: 1px solid hsl(var(--border)) !important; background: hsl(var(--card)) !important;
 }
 
 /* Imagen */
 html body .jlta-products-section .wc-block-components-product-image {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100% !important;
-  height: 192px !important;
-  margin: 0 !important;
-  padding: 1.25rem !important;
-  border-bottom: 1px solid hsl(var(--border)) !important;
-  background: #f0f0ed !important;
-  aspect-ratio: auto !important;
+  display: flex; align-items: center; justify-content: center; width: 100% !important; height: 192px !important; margin: 0 !important; padding: 1.25rem !important; border-bottom: 1px solid hsl(var(--border)) !important; background: #f0f0ed !important; aspect-ratio: auto !important;
 }
+html body .jlta-products-section .wc-block-components-product-image a { display: flex !important; align-items: center; justify-content: center; width: 100% !important; height: 100% !important; }
+html body .jlta-products-section .wc-block-components-product-image img { display: block !important; width: 100% !important; height: 160px !important; object-fit: contain !important; }
 
-html body .jlta-products-section .wc-block-components-product-image a {
-  display: flex !important;
-  align-items: center;
-  justify-content: center;
-  width: 100% !important;
-  height: 100% !important;
+/* Título del producto y Flecha SVG (usando mask-image) */
+html body .jlta-products-section .wc-block-components-product-title, html body .jlta-products-section .wp-block-post-title, html body .jlta-products-section .jlta-product-card__title {
+  position: relative !important; display: block !important; width: auto !important; margin: 1rem 1rem 0.25rem !important; padding: 0 1.5rem 0 0 !important; color: hsl(var(--foreground)) !important; font-size: 1rem !important; font-weight: 600 !important; line-height: 1.25 !important;
 }
+html body .jlta-products-section .wc-block-components-product-title a, html body .jlta-products-section .wp-block-post-title a, html body .jlta-products-section .jlta-product-card__title a { display: block !important; color: inherit !important; text-decoration: none !important; }
 
-html body .jlta-products-section .wc-block-components-product-image img {
-  display: block !important;
-  width: 100% !important;
-  height: 160px !important;
-  object-fit: contain !important;
+/* La flecha del título inyectada como SVG */
+html body .jlta-products-section .wp-block-post-title::after {
+  content: ""; position: absolute; top: 50%; right: 0; transform: translateY(-50%); width: 1rem; height: 1rem;
+  background-color: hsl(var(--muted-foreground));
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M7 7h10v10'/%3E%3Cpath d='M7 17 17 7'/%3E%3C/svg%3E");
+  mask-size: contain; mask-repeat: no-repeat; mask-position: center; transition: background-color .2s;
 }
-
-/* Título del producto */
-html body .jlta-products-section .wc-block-components-product-title,
-html body .jlta-products-section .wp-block-post-title,
-html body .jlta-products-section .jlta-product-card__title {
-  position: relative !important;
-  display: block !important;
-  width: auto !important;
-  min-height: auto !important;
-  margin: 1rem 1rem 0.25rem !important;
-  padding: 0 1.5rem 0 0 !important;
-  color: hsl(var(--foreground)) !important;
-  font-size: 1rem !important;
-  font-weight: 600 !important;
-  line-height: 1.25 !important;
-  visibility: visible !important;
-  opacity: 1 !important;
-}
-
-html body .jlta-products-section .wc-block-components-product-title a,
-html body .jlta-products-section .wp-block-post-title a,
-html body .jlta-products-section .jlta-product-card__title a {
-  display: block !important;
-  color: inherit !important;
-  text-decoration: none !important;
-}
-
-/* Flecha del título */
-html body .jlta-products-section .wc-block-components-product-title::after,
-html body .jlta-products-section .wp-block-post-title::after,
-html body .jlta-products-section .jlta-product-card__title::after {
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: hsl(var(--muted-foreground));
-  content: "↗";
-  font-size: 1rem;
-}
+html body .jlta-products-section li:hover .wp-block-post-title::after { background-color: hsl(var(--signal)); }
 
 /* Descripción */
-html body .jlta-products-section .wc-block-components-product-description,
-html body .jlta-products-section .wp-block-post-excerpt {
-  width: auto !important;
-  margin: 0 1rem 0.75rem !important;
-  color: hsl(var(--muted-foreground)) !important;
-  font-size: 0.78rem !important;
-  line-height: 1.3 !important;
-}
+html body .jlta-products-section .wc-block-components-product-description, html body .jlta-products-section .wp-block-post-excerpt { width: auto !important; margin: 0 1rem 0.75rem !important; color: hsl(var(--muted-foreground)) !important; font-size: 0.78rem !important; line-height: 1.3 !important; }
 
 /* Precio */
-html body .jlta-products-section .wc-block-components-product-price,
-html body .jlta-products-section .price {
-  width: auto !important;
-  margin: auto 1rem 0.75rem !important;
-  color: hsl(var(--signal)) !important;
-  font-size: 0.95rem !important;
-  font-weight: 600 !important;
+html body .jlta-products-section .wc-block-components-product-price, html body .jlta-products-section .price { width: auto !important; margin: auto 1rem 0.75rem !important; color: hsl(var(--signal)) !important; font-size: 0.95rem !important; font-weight: 600 !important; }
+
+/* Botón "Añadir" con SVG de Carrito */
+html body .jlta-products-section .wc-block-components-product-button { width: auto !important; margin: 0 1rem 1rem !important; text-align: right !important; }
+
+html body .jlta-products-section .wc-block-components-product-button__button, html body .jlta-products-section .wp-block-button__link {
+  display: inline-flex !important; align-items: center !important; justify-content: center !important; gap: 0.4rem !important;
+  min-width: 92px !important; padding: 0.55rem 0.8rem !important; border: 0 !important; border-radius: 0 !important; background: #171614 !important; color: #ffffff !important; font-size: 0 !important; font-weight: 600 !important; line-height: 1.2 !important;
 }
 
-/* Botón */
-html body .jlta-products-section .wc-block-components-product-button {
-  width: auto !important;
-  margin: 0 1rem 1rem !important;
-  text-align: right !important;
+/* Inyectar icono de carrito (SVG) a la izquierda */
+html body .jlta-products-section .wc-block-components-product-button__button::before {
+  content: ""; display: block; width: 1rem; height: 1rem; background-color: #ffffff;
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='21' r='1'/%3E%3Ccircle cx='19' cy='21' r='1'/%3E%3Cpath d='M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12'/%3E%3C/svg%3E");
+  mask-size: contain; mask-repeat: no-repeat; mask-position: center;
 }
 
-html body .jlta-products-section .wc-block-components-product-button__button,
-html body .jlta-products-section .wp-block-button__link {
-  display: inline-flex !important;
-  align-items: center !important;
-  justify-content: center !important;
-  min-width: 92px !important;
-  padding: 0.55rem 0.8rem !important;
-  border: 0 !important;
-  border-radius: 0 !important;
-  background: #171614 !important;
-  color: #ffffff !important;
-  font-size: 0.78rem !important;
-  font-weight: 600 !important;
-  line-height: 1.2 !important;
+/* Inyectar el texto "Añadir" a la derecha */
+html body .jlta-products-section .wc-block-components-product-button__button::after {
+  content: "Añadir"; font-size: 0.78rem !important; display: block;
 }
 
-/* ----------------------------------------------------------
-   6. MANIFIESTO
-   ---------------------------------------------------------- */
-html body .wp-block-group.jlta-manifiesto-section {
-  border-top: 1px solid hsl(var(--border));
-  padding: 5rem 1.5rem;
-  position: relative;
-}
+/* 5. MANIFIESTO */
+html body .wp-block-group.jlta-manifiesto-section { border-top: 1px solid hsl(var(--border)); border-bottom: none !important; padding: 5rem 1.5rem; position: relative; }
+@media (min-width: 768px) { html body .wp-block-group.jlta-manifiesto-section { padding: 7rem 2.5rem; } }
 
-@media (min-width: 768px) {
-  html body .wp-block-group.jlta-manifiesto-section {
-    padding: 7rem 2.5rem;
-  }
-}
+html body .jlta-manifiesto-section .wp-block-columns.jlta-manifiesto-grid { max-width: 72rem; margin: 0 auto !important; display: flex !important; flex-direction: column !important; gap: 3rem !important; }
+@media (min-width: 768px) { html body .jlta-manifiesto-section .wp-block-columns.jlta-manifiesto-grid { flex-direction: row !important; gap: 4rem !important; } }
 
-/* Grid de columnas */
-html body .jlta-manifiesto-section .wp-block-columns.jlta-manifiesto-grid {
-  max-width: 72rem;
-  margin: 0 auto !important;
-  display: flex !important;
-  flex-direction: column !important;
-  gap: 3rem !important;
-}
+html body .jlta-manifiesto-section .wp-block-column.jlta-manifiesto-col-izq, html body .jlta-manifiesto-section .wp-block-column.jlta-manifiesto-col-der { flex: 1 1 100% !important; min-width: 0 !important; margin: 0 !important; padding: 0 !important; }
+@media (min-width: 768px) { html body .jlta-manifiesto-section .wp-block-column.jlta-manifiesto-col-izq, html body .jlta-manifiesto-section .wp-block-column.jlta-manifiesto-col-der { flex: 1 1 50% !important; } }
 
-@media (min-width: 768px) {
-  html body .jlta-manifiesto-section .wp-block-columns.jlta-manifiesto-grid {
-    flex-direction: row !important;
-    gap: 4rem !important;
-  }
-}
+html body .jlta-manifiesto-section p.jlta-manifiesto-cita { font-family: 'Newsreader', Georgia, serif !important; font-style: italic !important; font-size: 1.875rem !important; line-height: 1.3 !important; color: hsl(var(--foreground)) !important; margin: 0 0 1.5rem 0 !important; padding: 0 !important; }
+@media (min-width: 768px) { html body .jlta-manifiesto-section p.jlta-manifiesto-cita { font-size: 2.6rem !important; line-height: 1.2 !important; } }
 
-html body .jlta-manifiesto-section .wp-block-column.jlta-manifiesto-col-izq,
-html body .jlta-manifiesto-section .wp-block-column.jlta-manifiesto-col-der {
-  flex: 1 1 100% !important;
-  min-width: 0 !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
+html body .jlta-manifiesto-section p.jlta-manifiesto-firma { font-size: 0.75rem !important; font-weight: 600 !important; letter-spacing: 0.3em !important; text-transform: uppercase !important; color: hsl(var(--signal)) !important; margin: 0 !important; padding: 0 !important; }
 
-@media (min-width: 768px) {
-  html body .jlta-manifiesto-section .wp-block-column.jlta-manifiesto-col-izq,
-  html body .jlta-manifiesto-section .wp-block-column.jlta-manifiesto-col-der {
-    flex: 1 1 50% !important;
-  }
-}
+html body .jlta-manifiesto-section p.jlta-manifiesto-texto { font-size: 1rem !important; line-height: 1.7 !important; color: hsl(var(--muted-foreground)) !important; margin: 0 0 1.5rem 0 !important; padding: 0 !important; }
+html body .jlta-manifiesto-section p.jlta-manifiesto-texto:last-child { margin-bottom: 0 !important; }
 
-/* La cita */
-html body .jlta-manifiesto-section p.jlta-manifiesto-cita {
-  font-family: 'Newsreader', Georgia, serif !important;
-  font-style: italic !important;
-  font-size: 1.875rem !important;
-  line-height: 1.3 !important;
-  color: hsl(var(--foreground)) !important;
-  margin: 0 0 1.5rem 0 !important;
-  padding: 0 !important;
-}
+/* 6. SERVICIOS (Lista Vertical) */
+html body .jlta-servicios-section { padding: 5rem 1.5rem; border-top: 1px solid hsl(var(--border)); }
+@media (min-width: 768px) { html body .jlta-servicios-section { padding: 7rem 2.5rem; } }
 
-@media (min-width: 768px) {
-  html body .jlta-manifiesto-section p.jlta-manifiesto-cita {
-    font-size: 2.6rem !important;
-    line-height: 1.2 !important;
-  }
-}
+html body .jlta-servicios-container { max-width: 72rem; margin: 0 auto; }
+html body .jlta-servicios-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: hsl(var(--signal)); margin: 0 0 0.75rem 0; }
+html body .jlta-servicios-title { font-size: 1.875rem; font-weight: 600; margin: 0 0 3rem 0; }
+@media (min-width: 768px) { html body .jlta-servicios-title { font-size: 3rem; } }
 
-/* La firma */
-html body .jlta-manifiesto-section p.jlta-manifiesto-firma {
-  font-size: 0.75rem !important;
-  font-weight: 600 !important;
-  letter-spacing: 0.3em !important;
-  text-transform: uppercase !important;
-  color: hsl(var(--signal)) !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
+html body .jlta-servicios-list { border-top: 1px solid hsl(var(--border)); display: flex; flex-direction: column; }
+html body .jlta-servicio-item { display: flex; align-items: flex-start; gap: 1.5rem; padding: 1.75rem 0; border-bottom: 1px solid hsl(var(--border)); }
+@media (min-width: 768px) { html body .jlta-servicio-item { gap: 2.5rem; } }
 
-/* El texto */
-html body .jlta-manifiesto-section p.jlta-manifiesto-texto {
-  font-size: 1rem !important;
-  line-height: 1.7 !important;
-  color: hsl(var(--muted-foreground)) !important;
-  margin: 0 0 1.5rem 0 !important;
-  padding: 0 !important;
-}
+html body .jlta-servicio-num { font-family: 'Newsreader', Georgia, serif !important; font-style: italic !important; font-size: 1.125rem !important; color: hsl(var(--signal)) !important; min-width: 2rem; margin: 0 !important; padding: 0 !important; }
+html body .jlta-servicio-content { flex: 1; }
+html body .jlta-servicios-list .jlta-servicio-title-item { font-size: 1.125rem !important; font-weight: 600 !important; margin: 0 0 0.25rem 0 !important; line-height: 1.3 !important; }
+@media (min-width: 768px) { html body .jlta-servicios-list .jlta-servicio-title-item { font-size: 1.25rem !important; } }
+html body .jlta-servicio-desc { font-size: 0.875rem !important; line-height: 1.6 !important; color: hsl(var(--muted-foreground)) !important; margin: 0 !important; padding: 0 !important; max-width: 42rem; }
 
-html body .jlta-manifiesto-section p.jlta-manifiesto-texto:last-child {
-  margin-bottom: 0 !important;
-}
+/* 7. CTA FINAL */
+html body .jlta-cta-section { padding: 0 1.5rem 5rem; }
+@media (min-width: 768px) { html body .jlta-cta-section { padding: 0 2.5rem 7rem; } }
 
-/* ----------------------------------------------------------
-   7. RESPONSIVE
-   ---------------------------------------------------------- */
-@media (min-width: 768px) {
-  html body .jlta-products-title {
-    font-size: 3rem;
-  }
-}
+html body .jlta-cta-card { max-width: 72rem; margin: 0 auto; background-color: hsl(var(--primary)); color: hsl(var(--primary-foreground)); padding: 3rem 2rem; position: relative; overflow: hidden; }
+@media (min-width: 768px) { html body .jlta-cta-card { padding: 5rem 4rem; } }
 
-@media (min-width: 640px) and (max-width: 1023px) {
-  html body .jlta-products-section .wc-block-product-template,
-  html body .jlta-products-section .wp-block-post-template {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-}
+html body .jlta-cta-deco { position: absolute; top: 2.5rem; right: 2.5rem; width: 0.75rem; height: 0.75rem; background-color: hsl(var(--signal)); display: none; }
+@media (min-width: 768px) { html body .jlta-cta-deco { display: block; } }
 
-@media (max-width: 639px) {
-  html body .jlta-products-section {
-    padding: 4rem 1rem;
-  }
+html body .jlta-cta-eyebrow { font-size: 0.75rem; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: hsl(var(--signal)); margin: 0 0 1rem 0; }
+html body .jlta-cta-title { font-size: 1.875rem; font-weight: 600; letter-spacing: -0.02em; color: hsl(var(--primary-foreground)); margin: 0 0 1rem 0; line-height: 1.1; }
+@media (min-width: 768px) { html body .jlta-cta-title { font-size: 3rem; } }
+html body .jlta-cta-title em { font-family: 'Newsreader', Georgia, serif; font-style: italic; font-weight: 500; color: hsl(var(--signal)); }
 
-  html body .jlta-products-header {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 1rem;
-  }
+html body .jlta-cta-desc { font-size: 0.875rem; color: hsl(var(--primary-foreground) / 0.7); margin: 0 0 2rem 0; max-width: 36rem; line-height: 1.6; }
+@media (min-width: 768px) { html body .jlta-cta-desc { font-size: 1rem; } }
 
-  html body .jlta-products-section .wc-block-product-template,
-  html body .jlta-products-section .wp-block-post-template {
-    grid-template-columns: 1fr !important;
-  }
-
-  html body .jlta-products-section .wc-block-components-product-image {
-    height: 220px !important;
-  }
-}
-
-/* ----------------------------------------------------------
-   Corrección del grosor de la línea divisoria entre secciones
-   ---------------------------------------------------------- */
-html body .jlta-products-section {
-  border-bottom: none !important;
-}
-
-
-/* ----------------------------------------------------------
-   INICIO tema_hijo_style.css_032
-   Entrega: 032
-   Cambios acumulados: 001-031 consolidados,
-                       032 (servicios en lista vertical y línea fina)
-   ---------------------------------------------------------- */
-
-/* 1. SECCIÓN PRINCIPAL */
-html body .jlta-servicios-section {
-  padding: 5rem 1.5rem;
-  border-top: 1px solid hsl(var(--border)); /* Línea divisoria fina */
-}
-
-@media (min-width: 768px) {
-  html body .jlta-servicios-section {
-    padding: 7rem 2.5rem;
-  }
-}
-
-/* Aseguramos que el manifiesto no duplique la línea */
-html body .jlta-manifiesto-section {
-  border-bottom: none !important;
-}
-
-html body .jlta-servicios-container {
-  max-width: 72rem;
-  margin: 0 auto;
-}
-
-/* 2. ENCABEZADO */
-html body .jlta-servicios-eyebrow {
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: hsl(var(--signal));
-  margin: 0 0 0.75rem 0;
-}
-
-html body .jlta-servicios-title {
-  font-size: 1.875rem;
-  font-weight: 600;
-  margin: 0 0 3rem 0;
-}
-
-@media (min-width: 768px) {
-  html body .jlta-servicios-title {
-    font-size: 3rem;
-  }
-}
-
-/* 3. LISTA VERTICAL */
-html body .jlta-servicios-list {
-  border-top: 1px solid hsl(var(--border));
-  display: flex;
-  flex-direction: column;
-}
-
-/* 4. CADA ITEM DEL SERVICIO (Fila) */
-html body .jlta-servicio-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 1.5rem;
-  padding: 1.75rem 0;
-  border-bottom: 1px solid hsl(var(--border));
-}
-
-@media (min-width: 768px) {
-  html body .jlta-servicio-item {
-    gap: 2.5rem;
-  }
-}
-
-/* 5. NÚMERO (01, 02, 03, 04) */
-html body .jlta-servicio-num {
-  font-family: 'Newsreader', Georgia, serif !important;
-  font-style: italic !important;
-  font-size: 1.125rem !important;
-  color: hsl(var(--signal)) !important;
-  min-width: 2rem;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-/* 6. TÍTULO Y DESCRIPCIÓN */
-html body .jlta-servicio-content {
-  flex: 1;
-}
-
-html body .jlta-servicios-list .jlta-servicio-title-item {
-  font-size: 1.125rem !important;
-  font-weight: 600 !important;
-  margin: 0 0 0.25rem 0 !important;
-  line-height: 1.3 !important;
-}
-
-@media (min-width: 768px) {
-  html body .jlta-servicios-list .jlta-servicio-title-item {
-    font-size: 1.25rem !important;
-  }
-}
-
-html body .jlta-servicio-desc {
-  font-size: 0.875rem !important;
-  line-height: 1.6 !important;
-  color: hsl(var(--muted-foreground)) !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  max-width: 42rem;
-}
-
-/* ----------------------------------------------------------
-   FIN tema_hijo_style.css_032
-   ---------------------------------------------------------- */
-
-
-/* ----------------------------------------------------------
-   INICIO tema_hijo_style.css_033
-   Entrega: 033
-   Cambios acumulados: 001-032 consolidados,
-                       033 (estilos para el bloque CTA final)
-   ---------------------------------------------------------- */
-
-/* 1. CONTENEDOR EXTERNO */
-html body .jlta-cta-section {
-  padding: 0 1.5rem 5rem;
-}
-
-@media (min-width: 768px) {
-  html body .jlta-cta-section {
-    padding: 0 2.5rem 7rem;
-  }
-}
-
-/* 2. TARJETA OSCURA */
-html body .jlta-cta-card {
-  max-width: 72rem;
-  margin: 0 auto;
-  background-color: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
-  padding: 3rem 2rem;
-  position: relative;
-  overflow: hidden;
-}
-
-@media (min-width: 768px) {
-  html body .jlta-cta-card {
-    padding: 5rem 4rem;
-  }
-}
-
-/* 3. CUADRADO ROJO DECORATIVO */
-html body .jlta-cta-deco {
-  position: absolute;
-  top: 2.5rem;
-  right: 2.5rem;
-  width: 0.75rem;
-  height: 0.75rem;
-  background-color: hsl(var(--signal));
-  display: none;
-}
-
-@media (min-width: 768px) {
-  html body .jlta-cta-deco {
-    display: block;
-  }
-}
-
-/* 4. ETIQUETA SUPERIOR (Empieza hoy) */
-html body .jlta-cta-eyebrow {
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: hsl(var(--signal));
-  margin: 0 0 1rem 0;
-}
-
-/* 5. TÍTULO */
-html body .jlta-cta-title {
-  font-size: 1.875rem;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  color: hsl(var(--primary-foreground));
-  margin: 0 0 1rem 0;
-  line-height: 1.1;
-}
-
-@media (min-width: 768px) {
-  html body .jlta-cta-title {
-    font-size: 3rem;
-  }
-}
-
-html body .jlta-cta-title em {
-  font-family: 'Newsreader', Georgia, serif;
-  font-style: italic;
-  font-weight: 500;
-  color: hsl(var(--signal));
-}
-
-/* 6. TEXTO DESCRIPTIVO */
-html body .jlta-cta-desc {
-  font-size: 0.875rem;
-  color: hsl(var(--primary-foreground) / 0.7);
-  margin: 0 0 2rem 0;
-  max-width: 36rem;
-  line-height: 1.6;
-}
-
-@media (min-width: 768px) {
-  html body .jlta-cta-desc {
-    font-size: 1rem;
-  }
-}
-
-/* 7. BOTÓN */
-html body .jlta-cta-btn .wp-block-button__link {
-  background-color: hsl(var(--signal));
-  color: hsl(var(--primary-foreground));
-  border-radius: 2px;
-  padding: 1rem 2rem;
-  font-size: 0.875rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  text-decoration: none;
-  transition: background-color .15s ease;
-}
-
-html body .jlta-cta-btn .wp-block-button__link:hover {
-  background-color: hsl(var(--signal) / 0.9);
-  color: hsl(var(--primary-foreground));
-}
-
-/* ----------------------------------------------------------
-   FIN tema_hijo_style.css_033
-   ---------------------------------------------------------- */
+html body .jlta-cta-btn .wp-block-button__link { display: inline-flex; align-items: center; gap: 0.5rem; background-color: hsl(var(--signal)); color: hsl(var(--primary-foreground)); border-radius: 2px; padding: 1rem 2rem; font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; text-decoration: none; transition: background-color .15s ease; }
+html body .jlta-cta-btn .wp-block-button__link:hover { background-color: hsl(var(--signal) / 0.9); }
