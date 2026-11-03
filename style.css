@@ -404,3 +404,147 @@ html body .jlta-footer-bottom p {
 /* ----------------------------------------------------------
    FIN tema_hijo_style.css_038
    ---------------------------------------------------------- */
+
+
+/* ----------------------------------------------------------
+   INICIO tema_hijo_style.css_039
+   Entrega: 039
+   Cambios acumulados: 001-038 consolidados,
+                       039 (estilos del header y menú)
+   ---------------------------------------------------------- */
+
+/* 1. CONTENEDOR DEL HEADER (Sticky) */
+html body .jlta-header {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 50 !important;
+  background-color: hsl(var(--background) / 0.90) !important;
+  backdrop-filter: blur(8px) !important;
+  border-bottom: 1px solid hsl(var(--border)) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* 2. CONTENEDOR INTERNO */
+html body .jlta-header-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-header-inner {
+    padding: 0 2.5rem;
+  }
+}
+
+/* 3. LOGO */
+html body .jlta-logo {
+  display: flex;
+  align-items: baseline;
+  gap: 0.375rem;
+  text-decoration: none;
+}
+
+html body .jlta-logo-text {
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: hsl(var(--foreground));
+}
+
+html body .jlta-logo-dot {
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  background-color: hsl(var(--signal));
+}
+
+/* 4. MENÚ DE NAVEGACIÓN */
+html body .jlta-nav {
+  display: none; /* Oculto en móvil */
+  align-items: center;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-nav {
+    display: flex; /* Visible en escritorio */
+  }
+}
+
+html body .jlta-nav-link {
+  font-size: 0.875rem;
+  font-weight: 400;
+  color: hsl(var(--muted-foreground));
+  text-decoration: none;
+  transition: color .15s ease;
+}
+
+html body .jlta-nav-link:hover,
+html body .jlta-nav-link.jlta-nav-active {
+  color: hsl(var(--foreground));
+}
+
+/* 5. BOTÓN DEL CARRITO */
+html body .jlta-cart-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  height: 2.75rem;
+  padding: 0 1rem;
+  border: 1px solid hsl(var(--border));
+  background-color: transparent;
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: background-color .15s ease;
+}
+
+html body .jlta-cart-btn:hover {
+  background-color: hsl(var(--muted));
+}
+
+html body .jlta-cart-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* Texto "Carrito" oculto en móvil */
+html body .jlta-cart-label {
+  display: none;
+}
+
+@media (min-width: 640px) {
+  html body .jlta-cart-label {
+    display: inline;
+  }
+}
+
+/* Badge (Contador rojo) */
+html body .jlta-cart-badge {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.25rem;
+  height: 1.25rem;
+  padding: 0 0.25rem;
+  background-color: hsl(var(--signal));
+  color: hsl(var(--signal-foreground));
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: 0; /* Cuadrado como en la referencia */
+}
+
+/* ----------------------------------------------------------
+   FIN tema_hijo_style.css_039
+   ---------------------------------------------------------- */
