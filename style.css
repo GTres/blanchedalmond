@@ -579,3 +579,10 @@ html body .jlta-manifiesto-section p.jlta-manifiesto-texto:last-child {
     height: 220px !important;
   }
 }
+
+/* ----------------------------------------------------------
+   Corrección del grosor de la línea divisoria entre secciones
+   ---------------------------------------------------------- */
+html body .jlta-products-section {
+  border-bottom: none !important;
+}
