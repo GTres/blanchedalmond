@@ -589,22 +589,27 @@ html body .jlta-products-section {
 
 
 /* ----------------------------------------------------------
-   INICIO tema_hijo_style.css_031
-   Entrega: 031
-   Cambios acumulados: 001-030 consolidados,
-                       031 (estilos para la sección de servicios)
+   INICIO tema_hijo_style.css_032
+   Entrega: 032
+   Cambios acumulados: 001-031 consolidados,
+                       032 (servicios en lista vertical y línea fina)
    ---------------------------------------------------------- */
 
 /* 1. SECCIÓN PRINCIPAL */
 html body .jlta-servicios-section {
   padding: 5rem 1.5rem;
-  border-bottom: 1px solid hsl(var(--border));
+  border-top: 1px solid hsl(var(--border)); /* Línea divisoria fina */
 }
 
 @media (min-width: 768px) {
   html body .jlta-servicios-section {
     padding: 7rem 2.5rem;
   }
+}
+
+/* Aseguramos que el manifiesto no duplique la línea */
+html body .jlta-manifiesto-section {
+  border-bottom: none !important;
 }
 
 html body .jlta-servicios-container {
@@ -625,7 +630,7 @@ html body .jlta-servicios-eyebrow {
 html body .jlta-servicios-title {
   font-size: 1.875rem;
   font-weight: 600;
-  margin: 0 0 2.5rem 0;
+  margin: 0 0 3rem 0;
 }
 
 @media (min-width: 768px) {
@@ -634,71 +639,66 @@ html body .jlta-servicios-title {
   }
 }
 
-/* 3. GRID DE SERVICIOS (4 columnas) */
-html body .jlta-servicios-grid {
-  display: grid !important;
-  grid-template-columns: repeat(1, 1fr) !important;
-  gap: 0 !important;
+/* 3. LISTA VERTICAL */
+html body .jlta-servicios-list {
   border-top: 1px solid hsl(var(--border));
-  margin: 0 !important;
+  display: flex;
+  flex-direction: column;
 }
 
-@media (min-width: 768px) {
-  html body .jlta-servicios-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
-  }
-}
-
-/* 4. CADA ITEM DEL SERVICIO */
-html body .jlta-servicios-grid .jlta-servicio-item {
-  padding: 2rem 1.5rem 2rem 0;
+/* 4. CADA ITEM DEL SERVICIO (Fila) */
+html body .jlta-servicio-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  padding: 1.75rem 0;
   border-bottom: 1px solid hsl(var(--border));
-  border-right: 1px solid hsl(var(--border));
 }
 
-/* Quitar el borde derecho al último item de la fila en desktop */
 @media (min-width: 768px) {
-  html body .jlta-servicios-grid .jlta-servicio-item:nth-child(4n) {
-    border-right: none;
-    padding-right: 0;
-  }
-}
-
-/* En móvil, quitar bordes derechos y ajustar padding */
-@media (max-width: 767px) {
-  html body .jlta-servicios-grid .jlta-servicio-item {
-    border-right: none;
-    padding: 2rem 0;
+  html body .jlta-servicio-item {
+    gap: 2.5rem;
   }
 }
 
 /* 5. NÚMERO (01, 02, 03, 04) */
-html body .jlta-servicios-grid .jlta-servicio-num {
+html body .jlta-servicio-num {
   font-family: 'Newsreader', Georgia, serif !important;
   font-style: italic !important;
-  font-size: 1.25rem !important;
+  font-size: 1.125rem !important;
   color: hsl(var(--signal)) !important;
-  margin: 0 0 1rem 0 !important;
+  min-width: 2rem;
+  margin: 0 !important;
   padding: 0 !important;
 }
 
-/* 6. TÍTULO DEL SERVICIO */
-html body .jlta-servicios-grid .jlta-servicio-title {
+/* 6. TÍTULO Y DESCRIPCIÓN */
+html body .jlta-servicio-content {
+  flex: 1;
+}
+
+html body .jlta-servicios-list .jlta-servicio-title-item {
   font-size: 1.125rem !important;
   font-weight: 600 !important;
-  margin: 0 0 0.5rem 0 !important;
+  margin: 0 0 0.25rem 0 !important;
   line-height: 1.3 !important;
 }
 
-/* 7. DESCRIPCIÓN */
-html body .jlta-servicios-grid .jlta-servicio-desc {
+@media (min-width: 768px) {
+  html body .jlta-servicios-list .jlta-servicio-title-item {
+    font-size: 1.25rem !important;
+  }
+}
+
+html body .jlta-servicio-desc {
   font-size: 0.875rem !important;
   line-height: 1.6 !important;
   color: hsl(var(--muted-foreground)) !important;
   margin: 0 !important;
   padding: 0 !important;
+  max-width: 42rem;
 }
 
 /* ----------------------------------------------------------
-   FIN tema_hijo_style.css_031
+   FIN tema_hijo_style.css_032
    ---------------------------------------------------------- */
