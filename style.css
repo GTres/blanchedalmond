@@ -586,3 +586,119 @@ html body .jlta-manifiesto-section p.jlta-manifiesto-texto:last-child {
 html body .jlta-products-section {
   border-bottom: none !important;
 }
+
+
+/* ----------------------------------------------------------
+   INICIO tema_hijo_style.css_031
+   Entrega: 031
+   Cambios acumulados: 001-030 consolidados,
+                       031 (estilos para la sección de servicios)
+   ---------------------------------------------------------- */
+
+/* 1. SECCIÓN PRINCIPAL */
+html body .jlta-servicios-section {
+  padding: 5rem 1.5rem;
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+@media (min-width: 768px) {
+  html body .jlta-servicios-section {
+    padding: 7rem 2.5rem;
+  }
+}
+
+html body .jlta-servicios-container {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+/* 2. ENCABEZADO */
+html body .jlta-servicios-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: hsl(var(--signal));
+  margin: 0 0 0.75rem 0;
+}
+
+html body .jlta-servicios-title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  margin: 0 0 2.5rem 0;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-servicios-title {
+    font-size: 3rem;
+  }
+}
+
+/* 3. GRID DE SERVICIOS (4 columnas) */
+html body .jlta-servicios-grid {
+  display: grid !important;
+  grid-template-columns: repeat(1, 1fr) !important;
+  gap: 0 !important;
+  border-top: 1px solid hsl(var(--border));
+  margin: 0 !important;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-servicios-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* 4. CADA ITEM DEL SERVICIO */
+html body .jlta-servicios-grid .jlta-servicio-item {
+  padding: 2rem 1.5rem 2rem 0;
+  border-bottom: 1px solid hsl(var(--border));
+  border-right: 1px solid hsl(var(--border));
+}
+
+/* Quitar el borde derecho al último item de la fila en desktop */
+@media (min-width: 768px) {
+  html body .jlta-servicios-grid .jlta-servicio-item:nth-child(4n) {
+    border-right: none;
+    padding-right: 0;
+  }
+}
+
+/* En móvil, quitar bordes derechos y ajustar padding */
+@media (max-width: 767px) {
+  html body .jlta-servicios-grid .jlta-servicio-item {
+    border-right: none;
+    padding: 2rem 0;
+  }
+}
+
+/* 5. NÚMERO (01, 02, 03, 04) */
+html body .jlta-servicios-grid .jlta-servicio-num {
+  font-family: 'Newsreader', Georgia, serif !important;
+  font-style: italic !important;
+  font-size: 1.25rem !important;
+  color: hsl(var(--signal)) !important;
+  margin: 0 0 1rem 0 !important;
+  padding: 0 !important;
+}
+
+/* 6. TÍTULO DEL SERVICIO */
+html body .jlta-servicios-grid .jlta-servicio-title {
+  font-size: 1.125rem !important;
+  font-weight: 600 !important;
+  margin: 0 0 0.5rem 0 !important;
+  line-height: 1.3 !important;
+}
+
+/* 7. DESCRIPCIÓN */
+html body .jlta-servicios-grid .jlta-servicio-desc {
+  font-size: 0.875rem !important;
+  line-height: 1.6 !important;
+  color: hsl(var(--muted-foreground)) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ----------------------------------------------------------
+   FIN tema_hijo_style.css_031
+   ---------------------------------------------------------- */
