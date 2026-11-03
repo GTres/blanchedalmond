@@ -702,3 +702,131 @@ html body .jlta-servicio-desc {
 /* ----------------------------------------------------------
    FIN tema_hijo_style.css_032
    ---------------------------------------------------------- */
+
+
+/* ----------------------------------------------------------
+   INICIO tema_hijo_style.css_033
+   Entrega: 033
+   Cambios acumulados: 001-032 consolidados,
+                       033 (estilos para el bloque CTA final)
+   ---------------------------------------------------------- */
+
+/* 1. CONTENEDOR EXTERNO */
+html body .jlta-cta-section {
+  padding: 0 1.5rem 5rem;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-cta-section {
+    padding: 0 2.5rem 7rem;
+  }
+}
+
+/* 2. TARJETA OSCURA */
+html body .jlta-cta-card {
+  max-width: 72rem;
+  margin: 0 auto;
+  background-color: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: 3rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-cta-card {
+    padding: 5rem 4rem;
+  }
+}
+
+/* 3. CUADRADO ROJO DECORATIVO */
+html body .jlta-cta-deco {
+  position: absolute;
+  top: 2.5rem;
+  right: 2.5rem;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: hsl(var(--signal));
+  display: none;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-cta-deco {
+    display: block;
+  }
+}
+
+/* 4. ETIQUETA SUPERIOR (Empieza hoy) */
+html body .jlta-cta-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: hsl(var(--signal));
+  margin: 0 0 1rem 0;
+}
+
+/* 5. TÍTULO */
+html body .jlta-cta-title {
+  font-size: 1.875rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: hsl(var(--primary-foreground));
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-cta-title {
+    font-size: 3rem;
+  }
+}
+
+html body .jlta-cta-title em {
+  font-family: 'Newsreader', Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  color: hsl(var(--signal));
+}
+
+/* 6. TEXTO DESCRIPTIVO */
+html body .jlta-cta-desc {
+  font-size: 0.875rem;
+  color: hsl(var(--primary-foreground) / 0.7);
+  margin: 0 0 2rem 0;
+  max-width: 36rem;
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  html body .jlta-cta-desc {
+    font-size: 1rem;
+  }
+}
+
+/* 7. BOTÓN */
+html body .jlta-cta-btn .wp-block-button__link {
+  background-color: hsl(var(--signal));
+  color: hsl(var(--primary-foreground));
+  border-radius: 2px;
+  padding: 1rem 2rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: background-color .15s ease;
+}
+
+html body .jlta-cta-btn .wp-block-button__link:hover {
+  background-color: hsl(var(--signal) / 0.9);
+  color: hsl(var(--primary-foreground));
+}
+
+/* ----------------------------------------------------------
+   FIN tema_hijo_style.css_033
+   ---------------------------------------------------------- */
